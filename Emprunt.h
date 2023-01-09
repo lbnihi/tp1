@@ -10,13 +10,14 @@ private:
     bool _status;
 public:
     Emprunt(std::string isbn);
-   //Emprunt(std::string isbn,std::string idLecteur,bool status);
+    Emprunt(std::string isbn,std::string idLecteur,bool status);
     std::string getidLecteur();
     void rendre();
-    void emprunter(std::string idLecteur,Date datedemprunt);
+    void emprunter(std::string idLecteur);
     Date getdatedemprunt();
     bool getstatus();
     std::string getisbn();
+    friend std::ostream& operator<<(std::ostream& os,Emprunt const& E);
        
 };
 

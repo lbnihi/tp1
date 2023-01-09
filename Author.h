@@ -17,5 +17,6 @@ public:
     std::string afficherNom();
     std::string afficherPrenom();
     friend bool operator==(Author const& a, Author const& b);
+    friend std::ostream& operator<<(std::ostream& os, Author const& A);
 };
 #endif //AUTHOR_H

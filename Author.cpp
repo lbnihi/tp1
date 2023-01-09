@@ -15,16 +15,21 @@ using namespace std;
       return _id;
     }
     string Author::afficherNom(){
-        cout<<_nom<<endl;
+        return _nom;
     }
     string Author::afficherPrenom(){
-        cout<<_prenom<<endl;
+        return _prenom;
     }
     bool operator==(Author const& a, Author const& b)
     {
-    if (a._nom==b._nom && a._prenom==b._prenom) //&& a._id==b._id)
+    if (a._nom==b._nom && a._prenom==b._prenom) 
     {
         return true;
     }
     return false;
+    }
+    ostream& operator<<(ostream& os, Author const& A)
+    {
+       os << A._nom << " " << A._prenom << " " << A._id;
+       return os;
     }

@@ -21,22 +21,20 @@ class Library{
                   Date datedenaissance,std::vector <std::string> list);
         void afficherLivres();
         bool livreEstPresent(Book const& l);
-        void emprunterLivre();
+        //void EmprunterLivre(std::string idlivre,std::string idlecteur);
 
         void addLecteur(std::string nom, std::string prenom,std::string idLecteur,std::vector<std::string> idlivres);
         bool lecteurEstPresent(Lecteur const& x);
         void afficherLecteurs();
-       // void afficherLivresLecteur();
+        void afficherLivresLecteur(std::string titrelivre,std::string idLecteur);
+    
 
         void addAuteur(std::string id,std::string nom, std::string prenom,Date datedenaissance);
         bool auteurEstPresent(Author const& x);
         void afficherAuteur();
-        //void afficherLivresAuteur();
-
-        void emprunt( std::string isbnLivre,std::string idLecteur,Date datedemprunt);
-        //void emprunterLivre();
-        void rendreLivre();
-        //void pourcentageEmprunt();
+        void restituerlivre(std::string idLecteur,std::string idLivre);
+        void afficherLivresAuteur();
+        void pourcentageEmprunt();
         //void classementLecteurs();
 };   
 

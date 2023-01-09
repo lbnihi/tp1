@@ -6,13 +6,13 @@ using namespace std;
             _isbn(isbn),_idLecteur("0"),_status(false){
 
     }
-    //Emprunt::Emprunt(std::string isbn,std::string idLecteur,bool status):
-           // __isbn(isbn),_idLecteur(idLecteur),_status(status){}
+    Emprunt::Emprunt(std::string isbn,std::string idLecteur,bool status):
+            _isbn(isbn),_idLecteur(idLecteur),_status(status){}
     string Emprunt::getidLecteur(){
         return _idLecteur;
     }
     bool Emprunt::getstatus(){
-        cout<<_status;
+        return _status;
     }
     Date Emprunt::getdatedemprunt(){
         return _datedemprunt;
@@ -24,8 +24,19 @@ using namespace std;
         _status=false;
         _idLecteur="0";
     }
-     void Emprunt::emprunter(std::string idLecteur,Date datedemprunt){
+     void Emprunt::emprunter(std::string idLecteur){
         _status=true;
         _idLecteur=idLecteur;
-        _datedemprunt=datedemprunt;
      }
+     ostream& operator<<(ostream& os, Emprunt const& E)
+    {
+       if(E._status==false)
+       {
+         os << "Le livre n'a pas ete emprunter";
+       }
+       else
+       {
+        os << "Emprunter par " << E._idLecteur;
+       }
+      return os;
+    }

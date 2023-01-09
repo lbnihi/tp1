@@ -1,3 +1,4 @@
+
 #include <string.h>
 #include <vector>
 #include "Lecteur.h"
@@ -11,10 +12,10 @@ using namespace std;
 
     }
     std::string Lecteur::afficherNom(){
-        cout<< _nom<<endl;
+        return _nom;
     }
     std::string Lecteur::afficherPrenom(){
-        cout<< _prenom<<endl;
+       return _prenom;
     }
     std::string Lecteur::getidLecteur(){
         return _idLecteur;
@@ -36,4 +37,17 @@ using namespace std;
                 _idlivres.erase(_idlivres.begin()+i);
             }
         }
+    }
+    bool operator==(Lecteur const& a, Lecteur const& b)
+    {
+        return a.estEgal(b);
+    }
+    bool Lecteur::estEgal(Lecteur const& b) const
+    {
+        return (_nom==b._nom && _prenom==b._prenom && _idLecteur==b._idLecteur );
+    }
+    ostream& operator<<(std::ostream& os, Lecteur const& L)
+    {
+      os << L._nom << " " << L._prenom << " " << "id:" << L._idLecteur;
+      return os;
     }

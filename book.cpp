@@ -1,6 +1,7 @@
 #include <string.h>
 #include <vector>
 #include "book.h"
+#include "Emprunt.h"
 #include <iostream>
 #include <assert.h>
 using namespace std;
@@ -15,16 +16,17 @@ Book::Book(std::string title,
     Date datedenaissance,
     std::vector <std::string> list):
            _title(title),_auteur(id,nom,prénom,datedenaissance),_language(language),
-           _type(type),_publication(publication),_isbn(isbn),_list(list){
+           _type(type),_publication(publication),_isbn(isbn),_list(list),_emprunt(isbn){
 
               bool status = isISBN(isbn);
               assert(status && "ISBN is not valid");
-    };
-void Book::getAuthor(){
-       _auteur.afficherAuthor();
+    }
+void Book::getNomAuthor(){
+       _auteur.afficherNom();
 }
-
-
+void Book::getPrenomAuthor(){
+       _auteur.afficherPrenom();
+}
 std::string Book::afficherTitre() {
        return _title;
 }    
@@ -45,6 +47,10 @@ void Book::getList() {
 std::string Book::getType() {
        return _type;
 }    
+std::string Book::getLecteur()
+{
+    return _emprunt.getidLecteur();
+}
 
 Date Book::getPublication() {
        return _publication;
@@ -63,12 +69,21 @@ bool Book::estEgal(Book const& b) const
 {
     return (_title==b._title && _auteur==b._auteur && _language==b._language && _isbn==b._isbn);
 }
-/*bool Book::estEmprunter(){
-       return _emprunt.getStatus();
+bool Book::estEmprunter(){
+       return _emprunt.getstatus();
+}
+void Book::emprunter(std::string idLecteur){
+ 
+   _emprunt.emprunter(idLecteur);
+}
+void Book::rendreLivre()
+{
+    _emprunt.rendre();
+}
+/*ostream& operator<<(ostream& os, Book const& L)
+{
+    os << "Titre:" << L._title << endl << "Auteur:" << L._auteur <<endl << "Langue:" << L._language 
+    << endl <<"Genre:" << L._type << endl << "Isbn:" << L._isbn  << endl; 
+     return os;
 }*/
-  /*void emprunter(std::string idLecteur){
-       Emprunt e(isbn)
-       return  _emprunt.emprunter(idLecteur,datedemprunt);*/
-  
-  void rendreLivre();
 

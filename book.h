@@ -16,6 +16,7 @@ private:
     std::string _isbn;
     std::vector <std::string> _list;
     Author _auteur;
+    Emprunt _emprunt;
 public:
    //Contructor
     Book(std::string title,
@@ -32,21 +33,25 @@ public:
   //methods
   
   std::string afficherTitre() ;
-  void getAuthor() ;
+  void getNomAuthor() ;
+  void getPrenomAuthor();
   std::string getLanguage() ;
   std::string getType() ;
   std::string getISBN() ;
   void getList() ;
   Date getPublication() ;
   bool estEmprunter();
-  //void rendreLivre();
+  void emprunter(std::string idLecteur);
+  void rendreLivre();
   bool estEgal(Book const& b) const ;
+  std::string getLecteur();
 
 };
 
 //functions
  bool isISBN(std::string isbn);
  bool operator==(Book const& a, Book const& b);
+ std::ostream& operator<<(std::ostream& os,Book const& L);
 
 
 #endif //BOOK_H

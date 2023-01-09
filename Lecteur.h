@@ -19,4 +19,8 @@ public:
      int  getVectorSize();
      void addlivres(std::string newid);
      void removelivres(std::string oldid);
+     bool estEgal(Lecteur const& b) const ;
+     friend bool operator==(Lecteur const& a, Lecteur const& b);
+     friend std::ostream& operator<<(std::ostream& os, Lecteur const& L);
+
 };     
