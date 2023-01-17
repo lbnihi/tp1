@@ -14,8 +14,8 @@ public:
     Author();
     void afficherAuthor();
     std::string getId();
-    std::string afficherNom();
-    std::string afficherPrenom();
+    std::string nom();
+    std::string prenom();
     friend bool operator==(Author const& a, Author const& b);
     friend std::ostream& operator<<(std::ostream& os, Author const& A);
 };

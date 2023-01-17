@@ -21,11 +21,11 @@ Book::Book(std::string title,
               bool status = isISBN(isbn);
               assert(status && "ISBN is not valid");
     }
-void Book::getNomAuthor(){
-       _auteur.afficherNom();
+std::string Book::getNomAuthor(){
+       return _auteur.nom();
 }
-void Book::getPrenomAuthor(){
-       _auteur.afficherPrenom();
+std::string Book::getPrenomAuthor(){
+       return _auteur.prenom();
 }
 std::string Book::afficherTitre() {
        return _title;

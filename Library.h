@@ -21,12 +21,12 @@ class Library{
                   Date datedenaissance,std::vector <std::string> list);
         void afficherLivres();
         bool livreEstPresent(Book const& l);
-        //void EmprunterLivre(std::string idlivre,std::string idlecteur);
+        void EmprunterLivre(std::string idlivre,std::string idlecteur);
 
         void addLecteur(std::string nom, std::string prenom,std::string idLecteur,std::vector<std::string> idlivres);
         bool lecteurEstPresent(Lecteur const& x);
         void afficherLecteurs();
-        void afficherLivresLecteur(std::string titrelivre,std::string idLecteur);
+        //void afficherLivresLecteur(std::string titrelivre,std::string idLecteur);
     
 
         void addAuteur(std::string id,std::string nom, std::string prenom,Date datedenaissance);

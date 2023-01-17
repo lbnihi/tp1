@@ -5,20 +5,20 @@ using namespace std;
       _id(id),_nom(nom),_prenom(prenom),_datedenaissance(datedenaissance){
     };
     Author::Author():
-      _id("1234567"),_nom("hugo"),_prenom("victor"),_datedenaissance(10/12/2018){
+      _id("1234567"),_nom("hugo"),_prenom("victor"),_datedenaissance(10,12,2018){
 
     };
     void Author::afficherAuthor(){
       cout<<_nom<<" "<<_prenom;
      }
+    std::string Author::nom() {
+     return _nom;    
+    }
+    std::string Author::prenom(){
+      return _prenom;
+    }
     std::string Author::getId(){
       return _id;
-    }
-    string Author::afficherNom(){
-        return _nom;
-    }
-    string Author::afficherPrenom(){
-        return _prenom;
     }
     bool operator==(Author const& a, Author const& b)
     {

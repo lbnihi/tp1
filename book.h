@@ -33,8 +33,8 @@ public:
   //methods
   
   std::string afficherTitre() ;
-  void getNomAuthor() ;
-  void getPrenomAuthor();
+  std::string getNomAuthor() ;
+  std::string getPrenomAuthor();
   std::string getLanguage() ;
   std::string getType() ;
   std::string getISBN() ;
