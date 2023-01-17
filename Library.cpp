@@ -42,7 +42,7 @@ using namespace std;
                break;
             }
         }
-        for (int i=0 ; i<_lecteurs.size() ; i++)
+        for (int i=0 ; i<(int)_lecteurs.size() ; i++)
         {
             if (_lecteurs[i].getidLecteur()==idlecteur)
             {
@@ -51,9 +51,6 @@ using namespace std;
         }
             
     }
-
-
-
     void Library::addLecteur(std::string nom, std::string prenom,std::string idLecteur,std::vector<std::string> idlivres){
         Lecteur L(nom,prenom,idLecteur,idlivres);
            _lecteurs.push_back(L);

@@ -1,1 +1,0 @@
-main.o: main.cpp Library.h book.h date.h Author.h Emprunt.h Lecteur.h
